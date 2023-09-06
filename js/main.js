@@ -359,10 +359,6 @@ let botonesAgregar = document.querySelectorAll(".producto-agregar")
 const numerito = document.querySelector("#numerito")
 
 
-botonesCategorias.forEach(boton => boton.addEventListener("click", () => {
-    aside.classList.remove("aside-visible")
-}))
-
 // función para cargar productos en el contenedor
 function cargarProductos(productosElegidos) {
 
