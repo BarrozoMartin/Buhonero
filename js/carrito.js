@@ -11,6 +11,8 @@ let botonesEliminar = document.querySelectorAll(".carrito-producto-eliminar")
 const botonVaciar = document.querySelector("#carrito-acciones-vaciar")
 const contenedorTotal = document.querySelector("#total")
 const botonComprar = document.querySelector("#carrito-acciones-comprar")
+const sonidoClick = document.getElementById("sonidoClick")
+const sonidoClick2 = document.getElementById("sonidoClick2")
 
 
 // función para cargar los productos en el carrito con DOM
@@ -81,18 +83,18 @@ function eliminarDelCarrito(e) {
         text: "Producto eliminado",
         duration: 3000,
         close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
+        gravity: "bottom", 
+        position: "right", 
+        stopOnFocus: true, 
         style: {
-          background: "#000000",
+          background: "#3300ff",
           borderRadius: "2rem",
           textTransform: "uppercase",
-          fontSize: ".75rem"
+          fontSize: "1rem"
         },
         offset: {
-            x: '1.5rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-            y: '1.5rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+            x: '1.5rem', 
+            y: '1.5rem' 
           },
         onClick: function(){} // Callback after click
       }).showToast();
@@ -109,7 +111,8 @@ function vaciarCarrito() {
 
     Swal.fire({
         title: '¿Estás seguro?',
-        icon: 'question',
+        icon: 'warning',
+        iconColor: '#eb1515',
         html: `Se van a borrar ${productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0)} productos.`,
         showCancelButton: true,
         focusConfirm: false,
@@ -122,6 +125,8 @@ function vaciarCarrito() {
             cargarProductosCarrito();
         }
       })
+
+      
 }
 
 // función para ir sumando el total de los productos
@@ -131,12 +136,21 @@ function actualizarTotal() {
 }
 
 botonComprar.addEventListener("click", comprarCarrito)
+    if (productosEnCarrito.length > 0) {
+        sonidoClick.play();
+    }
+
+
 function comprarCarrito() {
+
     productosEnCarrito.length = 0
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito))
     contenedorCarritoVacio.classList.add("disabled")
     contenedorCarritoProductos.classList.add("disabled")
     contenedorCarritoAcciones.classList.add("disabled")
     contenedorCarritoComprado.classList.remove("disabled")
+    if (productosEnCarrito.length === 0) {
+        sonidoClick2.play();
+    }
 
 }

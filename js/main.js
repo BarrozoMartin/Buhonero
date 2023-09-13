@@ -1,5 +1,8 @@
+//  Array vacío para almacenar los productos
 let productos = [];
 
+
+// Obtener los productos desde el archivo JSON
 fetch("./js/productos.json")
     .then(response => response.json())
     .then(data => {
@@ -7,7 +10,7 @@ fetch("./js/productos.json")
         cargarProductos(productos);
     })
 
-
+// Seleccionar los elementos del DOM
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategorias = document.querySelectorAll(".boton-categoria");
 const tituloPrincipal = document.querySelector("#titulo-principal");
@@ -19,7 +22,7 @@ botonesCategorias.forEach(boton => boton.addEventListener("click", () => {
     aside.classList.remove("aside-visible");
 }))
 
-
+// Función para cargar y mostrar los productos en la página
 function cargarProductos(productosElegidos) {
 
     contenedorProductos.innerHTML = "";
@@ -46,7 +49,7 @@ function cargarProductos(productosElegidos) {
 
 botonesCategorias.forEach(boton => {
     boton.addEventListener("click", (e) => {
-
+        // Elimina la clase "active" de todos los botones de categoría
         botonesCategorias.forEach(boton => boton.classList.remove("active"));
         e.currentTarget.classList.add("active");
 
@@ -72,7 +75,6 @@ function actualizarBotonesAgregar() {
 }
 
 let productosEnCarrito;
-
 let productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
 
 if (productosEnCarritoLS) {
@@ -81,25 +83,25 @@ if (productosEnCarritoLS) {
 } else {
     productosEnCarrito = [];
 }
-
+// Funcion para agregar productos al carrito
 function agregarAlCarrito(e) {
-
+    // Libreria para moststrar la notificacion cuando se agrega un producto al carrito
     Toastify({
         text: "Producto agregado",
         duration: 3000,
         close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
+        gravity: "bottom", 
+        position: "right", 
+        stopOnFocus: true, 
         style: {
-          background: "#000000",
+          background: "#3300ff",
           borderRadius: "2rem",
           textTransform: "uppercase",
-          fontSize: ".75rem"
+          fontSize: "1rem"
         },
         offset: {
-            x: '1.5rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-            y: '1.5rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+            x: '1.5rem', 
+            y: '1.5rem' 
           },
         onClick: function(){} // Callback after click
       }).showToast();
@@ -114,12 +116,12 @@ function agregarAlCarrito(e) {
         productoAgregado.cantidad = 1;
         productosEnCarrito.push(productoAgregado);
     }
-
+    // Actualiza el indicador numérico del carrito de compras
     actualizarNumerito();
 
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 }
-
+    // Función para actualizar el indicador numérico del carrito de compras
 function actualizarNumerito() {
     let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
     numerito.innerText = nuevoNumerito;

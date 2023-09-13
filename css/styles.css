@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
 
 :root {
     --clr-main: #000000;
     --clr-main-light: #ffffff;
     --clr-white: #fafafa;
-    --clr-gray: #d7d7d7;
+    --clr-gray: #b2afaf;
     --clr-red: #eb1515;
 }
 
@@ -12,7 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Aclonica', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, p, a, input, textarea, ul {
@@ -130,7 +130,7 @@ aside {
 }
 
 main {
-    background-color: var(--clr-white);
+    background: linear-gradient(to right, var(--clr-white), var(--clr-gray));
     margin: 1rem;
     margin-left: 0;
     border-radius: 2rem;

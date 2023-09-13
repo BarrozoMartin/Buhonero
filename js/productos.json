@@ -72,7 +72,7 @@
     },
     {
         "id": "caute-reparadora",
-        "titulo": "Cauterizacion Reparadora",
+        "titulo": "Cauterizacion Rep.",
         "imagen": "./img/productos/farmacia/cauterizacion-reparadora.png",
         "categoria": {
             "nombre": "Farmacia",
@@ -162,7 +162,7 @@
     },
     {
         "id": "campera-01",
-        "titulo": "Campera 01",
+        "titulo": "Campera Gris",
         "imagen": "./img/productos/indumentaria/campera01.jpg",
         "categoria": {
             "nombre": "Indumentaria",
@@ -172,7 +172,7 @@
     },
     {
         "id": "campera-02",
-        "titulo": "Campera 02",
+        "titulo": "Campera con capucha",
         "imagen": "./img/productos/indumentaria/campera02.jpg",
         "categoria": {
             "nombre": "Indumentaria",
@@ -182,7 +182,7 @@
     },
     {
         "id": "campera-03",
-        "titulo": "Campera 03",
+        "titulo": "Campera Iron Maiden",
         "imagen": "./img/productos/indumentaria/campera03.jpg",
         "categoria": {
             "nombre": "Indumentaria",
@@ -192,7 +192,7 @@
     },
     {
         "id": "campera-04",
-        "titulo": "Campera 04",
+        "titulo": "Campera Negra y Blanca",
         "imagen": "./img/productos/indumentaria/campera04.jpg",
         "categoria": {
             "nombre": "Indumentaria",
@@ -202,7 +202,7 @@
     },
     {
         "id": "campera-05",
-        "titulo": "Campera 05",
+        "titulo": "Campera Negra",
         "imagen": "./img/productos/indumentaria/campera05.jpg",
         "categoria": {
             "nombre": "Indumentaria",
