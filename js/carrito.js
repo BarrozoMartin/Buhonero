@@ -15,7 +15,7 @@ const sonidoClick = document.getElementById("sonidoClick")
 const sonidoClick2 = document.getElementById("sonidoClick2")
 
 
-// función para cargar los productos en el carrito con DOM
+    // función para cargar los productos en el carrito con DOM
 function cargarProductosCarrito() {
     // SI hay elementos en el carrito se van a mostrar
     if (productosEnCarrito && productosEnCarrito.length > 0) {
@@ -87,7 +87,7 @@ function eliminarDelCarrito(e) {
         position: "right", 
         stopOnFocus: true, 
         style: {
-          background: "#3300ff",
+          background: "#000000",
           borderRadius: "2rem",
           textTransform: "uppercase",
           fontSize: "1rem"
@@ -96,7 +96,7 @@ function eliminarDelCarrito(e) {
             x: '1.5rem', 
             y: '1.5rem' 
           },
-        onClick: function(){} // Callback after click
+        onClick: function(){} 
       }).showToast();
 
     const idBoton = e.currentTarget.id
@@ -149,6 +149,7 @@ function comprarCarrito() {
     contenedorCarritoProductos.classList.add("disabled")
     contenedorCarritoAcciones.classList.add("disabled")
     contenedorCarritoComprado.classList.remove("disabled")
+    
     if (productosEnCarrito.length === 0) {
         sonidoClick2.play();
     }

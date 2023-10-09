@@ -1,3 +1,13 @@
+// Función para reproducir el sonido
+function reproducirSonido() {
+    const audioElement = new Audio("./media/rare.mp3");
+    audioElement.play();
+  }
+  
+  // Registra la función para reproducir el sonido cuando el DOM se carga por primera vez
+  document.addEventListener("DOMContentLoaded", reproducirSonido);
+  
+
 //  Array vacío para almacenar los productos
 let productos = [];
 
@@ -94,7 +104,7 @@ function agregarAlCarrito(e) {
         position: "right", 
         stopOnFocus: true, 
         style: {
-          background: "#3300ff",
+          background: "#000000",
           borderRadius: "2rem",
           textTransform: "uppercase",
           fontSize: "1rem"
